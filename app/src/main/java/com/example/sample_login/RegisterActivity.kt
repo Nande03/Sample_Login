@@ -24,8 +24,9 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         etUsername = findViewById(R.id.etRUserName)
-        etPassword = findViewById((R.id.etRPassword))
-        btnRegister = findViewById((R.id.btnRegister))
+        etPassword = findViewById(R.id.etRPassword)
+        btnRegister = findViewById(R.id.btnRegister)
+
         this.findViewById<TextView>(R.id.tvLoginLink).setOnClickListener{
             startActivity(Intent(this, LoginActivity::class.java))
         }

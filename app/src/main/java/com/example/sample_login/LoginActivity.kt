@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -22,10 +24,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        etUsername = findViewById(R.id.etUserName)
-        etPassword = findViewById(R.id.etPassword)
+        etUsername = findViewById(R.id.etRUserName)
+        etPassword = findViewById(R.id.etRPassword)
         btnLogin = findViewById(R.id.btnLogin)
 
+        this.findViewById<TextView>(R.id.tvLoginLink).setOnClickListener{
+            startActivity(Intent(this,RegisterActivity::class.java))
+        }
         btnLogin.setOnClickListener {
             login(etUsername, etPassword)
         }
@@ -60,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
                 if (s == userName) {
-                    val intent = Intent(this@LoginActivity,DashboardActivity::class.java)
+                    val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                     intent.putExtra("Username",s)
                     Toast.makeText(
                         this@LoginActivity,
