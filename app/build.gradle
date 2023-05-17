@@ -32,8 +32,8 @@ android {
     }
     buildFeatures{
         dataBinding = true
-        viewBinding = true
     }
+    namespace 'com.example.sample_login'
 }
 
 dependencies {

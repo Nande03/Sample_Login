@@ -23,6 +23,10 @@ class DashboardActivity : AppCompatActivity() {
         this.findViewById<ImageView>(R.id.snake).setOnClickListener {
             startActivity(Intent(this, SnakeActivity::class.java))
 
+            this.findViewById<ImageView>(R.id.fruit).setOnClickListener() {
+                startActivity(Intent(this, CatchingFruits::class.java))
+            }
+
         }
     }
 }
